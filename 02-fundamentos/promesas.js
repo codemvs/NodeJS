@@ -35,7 +35,10 @@ let getEmpleado = id => {
         }
     });    
 }
-
+/**
+ * Obtener Salario
+ * @param {*} empleado 
+ */
 let getSalario=empleado=>{
     return new Promise((resolve, reject)=>{
         let salarioBD = salarios.find(salario=>empleado.id===salario.id);
