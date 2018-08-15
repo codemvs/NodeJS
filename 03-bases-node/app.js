@@ -1,14 +1,7 @@
 
 const { crearArchivo, listarTabla} = require('./multiplicar/multiplicar');
 const argv = require('./config/yargs').argv;
-
-//leer parametros.
-// let argv2 = process.argv;
-// let parametro = argv[2];
-// let base = parametro.split('=')[1];
-
-// console.log("Base: ",argv.base);
-// console.log("Limite: ",argv.base);
+const colors = require('colors');
 
 let comando = argv._[0];
 
