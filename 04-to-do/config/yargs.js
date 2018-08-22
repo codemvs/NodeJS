@@ -6,14 +6,14 @@ const argv = require('yargs')
             desc: 'Descripcion de la tarea por hacer'
         }
     })
-    .command('crear', 'Crear un elemento por hacer', {
+    .command('actualizar', 'Actualiza el estado completado de la tarea', {
         descripcion: {
             demand: true,
             alias: 'd',
             desc: 'Descripcion de la tarea por hacer'
         },
         completado: {
-            demand: true,
+            dafault: true,
             alias: 'c',
             desc: 'Marca como completado la tarea'
         }
