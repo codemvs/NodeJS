@@ -6,7 +6,7 @@ http.createServer((req,res)=>{
         nombre:"Salvador",
         edad:25,
         url:req.url
-    }));
+    },undefined,2));
     res.end();
 })
 .listen(8080);
