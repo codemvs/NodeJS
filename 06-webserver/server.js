@@ -1,16 +1,26 @@
 const express = require('express');
 const app = express();
-app.use(express.static(__dirname+'/public'))
-// app.get('/',(req,res)=>{
-//     // res.send('World');
-//     let salida = {
-//         nombre:"Salvador",
-//         edad:32,
-//         url:req.url
-//     }
+const hbs = require('hbs');
 
-//     res.send(salida);
-// });
+require('./hbs/helpers/helpers');
+
+//public archivos
+app.use(express.static(__dirname+'/public'));
+
+//Express HBS engine
+hbs.registerPartials(__dirname+'/views/parciales');
+app.set('view engine','hbs');
+
+
+
+app.get('/',(req,res)=>{
+      res.render('home',{
+          nombre:'salvador morales vicente'
+      });
+});
+app.get('/about', (req, res) => {
+    res.render('about');
+});
 app.get('/data', (req, res) => {
     
     res.send("Data");
