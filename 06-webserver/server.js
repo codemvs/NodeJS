@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 require('./hbs/helpers/helpers');
 
 //public archivos
@@ -21,10 +23,9 @@ app.get('/',(req,res)=>{
 app.get('/about', (req, res) => {
     res.render('about');
 });
-app.get('/data', (req, res) => {
-    
+app.get('/data', (req, res) => {    
     res.send("Data");
 });
-app.listen(8080,()=>{
-    console.log("Escucuchando peticiones en el puerto 8080");
+app.listen(port,()=>{
+    console.log(`Escucuchando peticiones en el puerto ${port}`);
 });
